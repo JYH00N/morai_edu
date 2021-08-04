@@ -30,6 +30,7 @@ find_package(catkin REQUIRED COMPONENTS
    VehicleCommand.msg
    VehicleSpec.msg
    VehicleSpecIndex.msg
+   
  )
 
  add_service_files(
