@@ -11,35 +11,70 @@ find_package(catkin REQUIRED COMPONENTS
  add_message_files(
    DIRECTORY msg
    FILES
-   CollisionData.msg
    CtrlCmd.msg
    EgoVehicleStatus.msg
-   EventInfo.msg
    GPSMessage.msg
-   Lamps.msg
-   Mgeo.msg
-   MgeoLink.msg
-   MgeoLinkList.msg
-   MgeoNode.msg
-   MgeoNodeList.msg
-   MoraiSimProcHandle.msg
-   MoraiTimestamp.msg
-   ObjectStatus.msg
+   GhostMessage.msg
    ObjectStatusList.msg
+   ObjectStatus.msg
    TrafficLight.msg
-   VehicleCommand.msg
+   ERP42Info.msg
+   GetTrafficLightStatus.msg
+   SetTrafficLight.msg
+   IntersectionControl.msg
+   IntersectionStatus.msg
+   CollisionData.msg
+   MultiEgoSetting.msg
+   IntscnTL.msg
+   SensorPosControl.msg
+   MoraiSimProcHandle.msg
+   MoraiSimProcStatus.msg
+   MoraiSrvResponse.msg
+   ScenarioLoad.msg
+   MoraiTLIndex.msg
+   MoraiTLInfo.msg
+   SaveSensorData.msg
+   ReplayInfo.msg
+   EventInfo.msg
+   Lamps.msg
    VehicleSpec.msg
    VehicleSpecIndex.msg
-   
+   NpcGhostCmd.msg
+   NpcGhostInfo.msg
+   VehicleCollisionData.msg
+   VehicleCollision.msg
+   SyncModeAddObj.msg
+   SyncModeInfo.msg
+   WaitForTickResponse.msg
+   SyncModeCmd.msg   
+   SyncModeRemoveObj.msg
+   SyncModeCmdResponse.msg  
+   WaitForTick.msg
+   MapSpec.msg
+   MapSpecIndex.msg
+   SyncModeCtrlCmd.msg
+   SyncModeSetGear.msg
+   SyncModeResultResponse.msg
+   SyncModeScenarioLoad.msg
+   RadarTrack.msg
+   RadarTracks.msg
  )
 
  add_service_files(
    DIRECTORY srv
    FILES
-   MoraiVehicleSpecSrv.srv
+   MoraiScenarioLoadSrv.srv
+   MoraiSimpProcSrv.srv
+   MoraiTLInfoSrv.srv
    MoraiEventCmdSrv.srv
+   MoraiVehicleSpecSrv.srv
+   MoraiSyncModeCmdSrv.srv
+   MoraiWaitForTickSrv.srv
+   MoraiMapSpecSrv.srv
+   MoraiSyncModeCtrlCmdSrv.srv
+   MoraiSyncModeSetGearSrv.srv
+   MoraiSyncModeSLSrv.srv
  )
-
 
  generate_messages(
    DEPENDENCIES
@@ -49,7 +84,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package(
   CATKIN_DEPENDS 
-  std_msgs 
+  std_msgs
   geometry_msgs
   message_runtime
 )
