@@ -1,0 +1,9 @@
+<launch>
+
+        <node pkg="path_planning" type="mgeo_pub.py" name="mgeo_pub" output="screen" />        
+        
+        <node pkg="path_planning" type="path_make.py" name="path_make" output="screen" />
+
+        <node pkg="rviz" type="rviz" name="rviz" args="-d $(find path_planning)/rviz/path_make.rviz" />
+
+</launch>
