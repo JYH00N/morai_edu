@@ -1,0 +1,13 @@
+<launch>
+
+        <node pkg="path_planning" type="mgeo_pub.py" name="mgeo_pub" output="screen" />     
+
+        <node pkg="path_planning" type="dijkstra_mgeo_path.py" name="mgeo_path_pub"  output="screen" />
+
+        <node pkg="path_planning" type="local_path_pub.py" name="local_path_pub" output="screen" />
+
+        <node pkg="lateral_control" type="pure_pursuit.py" name="pure_pursuit_path_tracking" output="screen" />
+
+        <node pkg="rviz" type="rviz" name="rviz" args="-d $(find path_planning)/rviz/mgeo_dijkstra.rviz" />
+
+</launch>
